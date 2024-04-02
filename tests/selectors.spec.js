@@ -1,7 +1,7 @@
 import { assert } from "console";
 import {test,expect} from "playwright/test";
 
-test.only("Learning selectors",async ({ page }) => {
+test("Learning selectors",async ({ page }) => {
     // navigate to webpage
     await page.goto("http://127.0.0.1:5500/clickme.html")
 
@@ -42,6 +42,7 @@ test.only("Learning selectors",async ({ page }) => {
 
     await page.getByText('Click Me').click()
 
+    
     // by role
 
     await page.getByRole('button', { name: /click me/i }).click();
@@ -51,5 +52,5 @@ test.only("Learning selectors",async ({ page }) => {
     await expect(page.locator('#counter')).toContainText('10')
 
     await page.pause()
-
+   
 });
